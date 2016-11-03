@@ -19,7 +19,7 @@
     "@angular/http": "^2.1.2",
     "@angular/platform-browser": "^2.1.2",
     "@angular/platform-browser-dynamic": "^2.1.2",
-    "@angular/material": "https://github.com/angular/material.git#52582f430537d03a63f996a6abab14085ee0dfa8",
+    "@angular/material": "2.0.0-alpha.9-3",
     "@angular/router": "^3.1.2",
     "core-js": "^2.4.1",
     "rxjs": "5.0.0-rc.1",

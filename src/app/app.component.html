@@ -1,7 +1,7 @@
 <md-sidenav-layout [class.m2app-dark]="isDarkTheme">
 
 	<md-sidenav #sidenav mode="side" class="app-sidenav">
-		Hai Nithil
+		
 	</md-sidenav>
 
 	<md-toolbar color="primary">
@@ -16,7 +16,7 @@
 	<div class="app-content">
 		<md-card class="demo-card demo-basic">
 			<md-card>
-				<md-input>
+				<md-input (blur)= "getpolicyDetails($event)">
 					<md-placeholder>
 						<span md-prefix>
           				<i class="material-icons app-input-icon">search</i> Policy No.

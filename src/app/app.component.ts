@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-
+import {ClaimService} from './claim.service';
 
 @Component({
   selector: 'material2-app-app',
@@ -14,13 +14,15 @@ export class Material2AppAppComponent {
     {name: 'Burritos', rating: 'Great'},
     {name: 'French fries', rating: 'Pretty good'},
   ];
-
-  progress: number = 0;
-
-  constructor() {
-    // Update the value for the progress-bar on an interval.
-    setInterval(() => {
-      this.progress = (this.progress + Math.floor(Math.random() * 4) + 1) % 100;
-    }, 200);
+  constructor(private claimservice: ClaimService) {
+        
+    }
+  getpolicyDetails(event)
+  {
+    let value = event.target.value;
+     this.claimservice.GetPolicyDetails(value).then( response=>{
+            console.log(response);
+            
+    });
   }
 }
