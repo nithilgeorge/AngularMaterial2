@@ -1,3 +1,4 @@
+
 export class Policy {
     PolicyNo: string;
     InsuredName: string;
@@ -24,5 +25,6 @@ export class Intimation {
     Injury : string;
     Place : string;
     loss_date: Date;
+
 
 }
