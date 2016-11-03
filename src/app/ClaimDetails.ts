@@ -1,4 +1,5 @@
 export class Policy{
+    PolicyNo:string;
     InsuredName:string;
     Email:string;
     PhoneNo:string;

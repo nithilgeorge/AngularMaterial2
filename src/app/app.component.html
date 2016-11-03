@@ -16,7 +16,7 @@
 	<div class="app-content">
 		<md-card class="demo-card demo-basic">
 			<md-card>
-				<md-input (blur)= "getpolicyDetails($event)" >
+				<md-input (blur)= "getpolicyDetails($event)" [(ngModel)]="policy.PolicyNo" [ngModelOptions]="{standalone: true}">
 					<md-placeholder>
 						<span md-prefix>
           				<i class="material-icons app-input-icon">search</i> Policy No.
@@ -27,15 +27,15 @@
 			</md-card>
 			<md-card class="app-input-section">
 				<md-card-title>Vehicle Details</md-card-title>
-				<md-input *ngIf="policy" value= {{ policy.RegNo }} placeholder="Vehicle Regn.No.">
+				<md-input [(ngModel)]="policy.RegNo" [ngModelOptions]="{standalone: true}"  placeholder="Vehicle Regn.No.">
 				</md-input>
 
-				<md-input *ngIf="policy" value= {{ policy.Make }} placeholder="Vehicle Make" maxlength="50">
+				<md-input [(ngModel)]="policy.Make" [ngModelOptions]="{standalone: true}"  placeholder="Vehicle Make" maxlength="50">
 				</md-input>
 
-				<md-input *ngIf="policy" value= {{ policy.Year }}>
+				<md-input [(ngModel)]="policy.Year" [ngModelOptions]="{standalone: true}"  >
 					<md-placeholder>
-						year
+						Year
 					</md-placeholder>
 				</md-input>
 			</md-card>
@@ -43,12 +43,12 @@
 
 			<md-card class="app-input-section">
 				<md-card-title>Insured Details</md-card-title>
-				<md-input *ngIf="policy" value= {{ policy.InsuredName }} placeholder="Name Of Insured"></md-input>
+				<md-input  [(ngModel)]="policy.InsuredName" [ngModelOptions]="{standalone: true}"  placeholder="Name Of Insured"></md-input>
 
-				<md-input *ngIf="policy" value= {{ policy.Email }} placeholder="E-mail Address" maxlength="50">
+				<md-input [(ngModel)]="policy.Email" [ngModelOptions]="{standalone: true}"  placeholder="E-mail Address" maxlength="50">
 				</md-input>
 
-				<md-input *ngIf="policy" value= {{ policy.PhoneNo }}>
+				<md-input  [(ngModel)]="policy.PhoneNo" [ngModelOptions]="{standalone: true}" >
 					<md-placeholder>
 						<i class="material-icons app-input-icon">android</i> Telephone No.
 					</md-placeholder>
@@ -89,6 +89,7 @@
 			</md-card>
 		</md-card>
 	</div>
+
 </md-sidenav-layout>
 <span class="app-action" [class.m2app-dark]="isDarkTheme">
   <button md-fab><md-icon>check circle</md-icon></button>
