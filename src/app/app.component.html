@@ -1,0 +1,98 @@
+<md-sidenav-layout [class.m2app-dark]="isDarkTheme">
+
+	<md-sidenav #sidenav mode="side" class="app-sidenav">
+		Hai Nithil
+	</md-sidenav>
+
+	<md-toolbar color="primary">
+		<button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button> Orient Motor Claims
+
+		<!-- <span class="app-toolbar-filler"></span>
+		<button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button> -->
+	</md-toolbar>
+
+	<div class="app-content">
+		<md-card class="demo-card demo-basic">
+			<md-card>
+				<md-input>
+					<md-placeholder>
+						<span md-prefix>
+          				<i class="material-icons app-input-icon">search</i> Policy No.
+          				&nbsp;
+        				</span>
+					</md-placeholder>
+				</md-input>
+			</md-card>
+			<md-card class="app-input-section">
+				<md-card-title>Vehicle Details</md-card-title>
+				<md-input placeholder="Vehicle Regn.No.">
+
+				</md-input>
+
+				<md-input placeholder="Vehicle Make" maxlength="50">
+
+				</md-input>
+
+				<md-input>
+					<md-placeholder>
+						year
+					</md-placeholder>
+				</md-input>
+			</md-card>
+
+
+			<md-card class="app-input-section">
+				<md-card-title>Insured Details</md-card-title>
+				<md-input placeholder="Name Of Insured"></md-input>
+
+				<md-input placeholder="E-mail Address" maxlength="50">
+
+				</md-input>
+
+				<md-input>
+					<md-placeholder>
+						<i class="material-icons app-input-icon">android</i> Telephone No.
+					</md-placeholder>
+				</md-input>
+			</md-card>
+			<md-card class="app-input-section">
+				<md-card-title>Driver Details</md-card-title>
+				<md-input placeholder="Name of Driver at the time of the accident" style="width:50%"></md-input>
+
+				<md-input placeholder="Date of birth of the Driver" maxlength="50" style="width:50%">
+
+				</md-input>
+
+				<div>
+					Was he driving with Insured's permission
+					<md-radio-group>
+						<md-radio-button value="Yes" class="md-primary">Yes</md-radio-button>
+						<md-radio-button value="No" class="md-warn">No</md-radio-button>
+					</md-radio-group>
+				</div>
+			</md-card>
+			<md-card>
+				<md-card-title>Loss Details</md-card-title>
+				<md-input id="InsuredVehicleDamageDetails" placeholder="Details of Damage to Insured vehicle" style="width:100%"></md-input><br>
+				<md-input placeholder="Details of Damage to Third Party vehicle other Property: If any" style="width:100%"></md-input><br>
+				<md-input placeholder="Name of Insurance Company conveing Third Party Vehicle If known" style="width:100%"></md-input><br>
+				<md-input placeholder="bodily Injuryto any Third Party/Passenger If any" style="width:100%"></md-input><br>
+				<md-input placeholder="Place" style="width:50%"></md-input><br>
+				<md-input type="date" placeholder="Date" style="width:50%"></md-input><br>
+				<md-checkbox [checked]="true">
+					I/We declare that the statements given above are true and that I/We not withheld any informayion related to this accident.I/We
+					also afirm that the happening was unintentional.
+				</md-checkbox>
+				<md-card-actions>
+					<button md-raised-button color="primary" class="md-raised">Submit</button>
+					<button md-raised-button class="md-raised">Cancel</button>
+				</md-card-actions>
+			</md-card>
+		</md-card>
+	</div>
+</md-sidenav-layout>
+<span class="app-action" [class.m2app-dark]="isDarkTheme">
+  <button md-fab><md-icon>check circle</md-icon></button>
+</span>
