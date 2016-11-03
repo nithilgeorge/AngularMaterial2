@@ -16,7 +16,7 @@
 	<div class="app-content">
 		<md-card class="demo-card demo-basic">
 			<md-card>
-				<md-input (blur)= "getpolicyDetails($event)">
+				<md-input (blur)= "getpolicyDetails($event)" >
 					<md-placeholder>
 						<span md-prefix>
           				<i class="material-icons app-input-icon">search</i> Policy No.
@@ -27,15 +27,13 @@
 			</md-card>
 			<md-card class="app-input-section">
 				<md-card-title>Vehicle Details</md-card-title>
-				<md-input placeholder="Vehicle Regn.No.">
-
+				<md-input *ngIf="policy" value= {{ policy.RegNo }} placeholder="Vehicle Regn.No.">
 				</md-input>
 
-				<md-input placeholder="Vehicle Make" maxlength="50">
-
+				<md-input *ngIf="policy" value= {{ policy.Make }} placeholder="Vehicle Make" maxlength="50">
 				</md-input>
 
-				<md-input>
+				<md-input *ngIf="policy" value= {{ policy.Year }}>
 					<md-placeholder>
 						year
 					</md-placeholder>
@@ -45,13 +43,12 @@
 
 			<md-card class="app-input-section">
 				<md-card-title>Insured Details</md-card-title>
-				<md-input placeholder="Name Of Insured"></md-input>
+				<md-input *ngIf="policy" value= {{ policy.InsuredName }} placeholder="Name Of Insured"></md-input>
 
-				<md-input placeholder="E-mail Address" maxlength="50">
-
+				<md-input *ngIf="policy" value= {{ policy.Email }} placeholder="E-mail Address" maxlength="50">
 				</md-input>
 
-				<md-input>
+				<md-input *ngIf="policy" value= {{ policy.PhoneNo }}>
 					<md-placeholder>
 						<i class="material-icons app-input-icon">android</i> Telephone No.
 					</md-placeholder>

@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {ClaimService} from './claim.service';
+import {Policy} from './ClaimDetails';
 
 @Component({
   selector: 'material2-app-app',
@@ -8,12 +9,7 @@ import {ClaimService} from './claim.service';
 })
 export class Material2AppAppComponent {
   isDarkTheme: boolean = false;
-
-  foods: any[] = [
-    {name: 'Pizza', rating: 'Excellent'},
-    {name: 'Burritos', rating: 'Great'},
-    {name: 'French fries', rating: 'Pretty good'},
-  ];
+  policy = new Policy();
   constructor(private claimservice: ClaimService) {
         
     }
@@ -21,8 +17,13 @@ export class Material2AppAppComponent {
   {
     let value = event.target.value;
      this.claimservice.GetPolicyDetails(value).then( response=>{
-            console.log(response);
-            
-    });
+            let field = response.tuple.old.Policy_Master;
+            this.policy.InsuredName = field.Insured_Name;
+            this.policy.Email = field.Reporter_Email;
+            this.policy.PhoneNo = field.Contact_Number;
+            this.policy.RegNo = field.Vehicle_No;
+            this.policy.Make = field.Vehicle_Make;
+            this.policy.Year = field.Vehicle_Year;  
+  });
   }
 }
