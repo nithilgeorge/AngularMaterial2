@@ -55,9 +55,10 @@
 			</md-card>
 			<md-card class="app-input-section">
 				<md-card-title>Driver Details</md-card-title>
-				<md-input placeholder="Name of Driver at the time of the accident" style="width:50%"></md-input>
+				<md-input placeholder="Name of Driver at the time of the accident" style="width:50%"
+				[(ngModel)]="intimation.DriverName" [ngModelOptions]="{standalone: true}"  ></md-input>
 
-				<md-input placeholder="Date of birth of the Driver" maxlength="50" style="width:50%">
+				<md-input [(ngModel)]="intimation.DOB" [ngModelOptions]="{standalone: true}" placeholder="Date of birth of the Driver" maxlength="50" style="width:50%">
 
 				</md-input>
 
@@ -75,14 +76,14 @@
 				<md-input placeholder="Details of Damage to Third Party vehicle other Property: If any" style="width:100%"></md-input><br>
 				<md-input placeholder="Name of Insurance Company conveing Third Party Vehicle If known" style="width:100%"></md-input><br>
 				<md-input placeholder="bodily Injuryto any Third Party/Passenger If any" style="width:100%"></md-input><br>
-				<md-input placeholder="Place" style="width:50%"></md-input><br>
-				<md-input type="date" placeholder="Date" style="width:50%"></md-input><br>
+				<md-input [(ngModel)]="intimation.Place" [ngModelOptions]="{standalone: true}" placeholder="Place" style="width:50%"></md-input><br>
+				<md-input [(ngModel)]="intimation.loss_date" [ngModelOptions]="{standalone: true}" type="date" placeholder="Date" style="width:50%"></md-input><br>
 				<md-checkbox [checked]="true">
 					I/We declare that the statements given above are true and that I/We not withheld any informayion related to this accident.I/We
 					also afirm that the happening was unintentional.
 				</md-checkbox>
 				<md-card-actions>
-					<button md-raised-button color="primary" class="md-raised">Submit</button>
+					<button md-raised-button color="primary" class="md-raised" (click)="submit()">Submit</button>
 					<button md-raised-button class="md-raised">Cancel</button>
 				</md-card-actions>
 			</md-card>

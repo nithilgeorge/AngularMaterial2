@@ -23,11 +23,12 @@ export class ClaimService {
   }
   ClaimIntimation(intimation :Intimation) : Promise<any> 
   {
-      
+      console.log(JSON.stringify(intimation));
       return $.cordys.ajax({
-        method: "GetPolicy_MasterObject",
+        method: "UpdateMoClaimNotifDetails",
         namespace: "http://schemas.cordys.com/OrientMotorClaimDemoMetadata",
         parameters: {
+            tuple:{
                 new : {
                         POLICYNUMBER: intimation.policyNo ,
                         INSUREDNAME :intimation.InsuredName,
@@ -42,11 +43,12 @@ export class ClaimService {
                         LOSS_LOCATION_TYPE : intimation.Place  ,
                         DATE_OF_LOSS : intimation.loss_date
                         }
-
-                    },
+            }
+        },
         dataType: '* json'})
         .done(function(response) {
             console.log(response);           
             });
+            
   }
 }

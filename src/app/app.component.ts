@@ -31,6 +31,13 @@ export class Material2AppAppComponent {
   }
   submit()
   {
+    this.intimation.policyNo=this.policy.PolicyNo;
+    this.intimation.InsuredName=this.policy.InsuredName;
+    this.intimation.Email=this.policy.Email;
+    this.intimation.PhoneNo=this.policy.PhoneNo;
+    this.intimation.RegNo=this.policy.RegNo;
+    this.intimation.Make=this.policy.Make;
+    this.intimation.Year=this.policy.Year;
     this.claimservice.ClaimIntimation(this.intimation);
   }
 }
