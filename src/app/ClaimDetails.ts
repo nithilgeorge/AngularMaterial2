@@ -17,14 +17,15 @@ export class Intimation {
     Make: string;
     Year:  number;
     DriverName: string;
-    DOB : Date;
-    permission : boolean;
+    DriverDOB : Date;
+    permission : string;
     Damage : string;
     DamageTP : string;
     InsuranceComTP : string;
     Injury : string;
     Place : string;
     loss_date: Date;
+    status:string = "Notified to Insurance Company";
 
 
 }

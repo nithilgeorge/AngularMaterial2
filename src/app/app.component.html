@@ -58,13 +58,11 @@
 				<md-input placeholder="Name of Driver at the time of the accident" style="width:50%"
 				[(ngModel)]="intimation.DriverName" [ngModelOptions]="{standalone: true}"  ></md-input>
 
-				<md-input [(ngModel)]="intimation.DOB" [ngModelOptions]="{standalone: true}" placeholder="Date of birth of the Driver" maxlength="50" style="width:50%">
-
+				<md-input [(ngModel)]="intimation.DriverDOB" [ngModelOptions]="{standalone: true}" type="date" placeholder="Date of birth of the Driver" maxlength="50" style="width:50%">
 				</md-input>
-
 				<div>
 					Was he driving with Insured's permission
-					<md-radio-group>
+					<md-radio-group [(ngModel)]="intimation.permission" [ngModelOptions]="{standalone: true}">
 						<md-radio-button value="Yes" class="md-primary">Yes</md-radio-button>
 						<md-radio-button value="No" class="md-warn">No</md-radio-button>
 					</md-radio-group>
@@ -72,10 +70,10 @@
 			</md-card>
 			<md-card>
 				<md-card-title>Loss Details</md-card-title>
-				<md-input id="InsuredVehicleDamageDetails" placeholder="Details of Damage to Insured vehicle" style="width:100%"></md-input><br>
-				<md-input placeholder="Details of Damage to Third Party vehicle other Property: If any" style="width:100%"></md-input><br>
-				<md-input placeholder="Name of Insurance Company conveing Third Party Vehicle If known" style="width:100%"></md-input><br>
-				<md-input placeholder="bodily Injuryto any Third Party/Passenger If any" style="width:100%"></md-input><br>
+				<md-input [(ngModel)]="intimation.Damage" [ngModelOptions]="{standalone: true}" id="InsuredVehicleDamageDetails" placeholder="Details of Damage to Insured vehicle" style="width:100%"></md-input><br>
+				<md-input [(ngModel)]="intimation.DamageTP" [ngModelOptions]="{standalone: true}" placeholder="Details of Damage to Third Party vehicle other Property: If any" style="width:100%"></md-input><br>
+				<md-input [(ngModel)]="intimation.InsuranceComTP" [ngModelOptions]="{standalone: true}" placeholder="Name of Insurance Company conveing Third Party Vehicle If known" style="width:100%"></md-input><br>
+				<md-input [(ngModel)]="intimation.Injury" [ngModelOptions]="{standalone: true}" placeholder="Bodily Injuryto any Third Party/Passenger If any" style="width:100%"></md-input><br>
 				<md-input [(ngModel)]="intimation.Place" [ngModelOptions]="{standalone: true}" placeholder="Place" style="width:50%"></md-input><br>
 				<md-input [(ngModel)]="intimation.loss_date" [ngModelOptions]="{standalone: true}" type="date" placeholder="Date" style="width:50%"></md-input><br>
 				<md-checkbox [checked]="true">
@@ -89,8 +87,6 @@
 			</md-card>
 		</md-card>
 	</div>
-
 </md-sidenav-layout>
 <span class="app-action" [class.m2app-dark]="isDarkTheme">
-
 </span>
