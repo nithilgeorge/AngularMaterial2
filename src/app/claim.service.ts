@@ -58,4 +58,17 @@ export class ClaimService {
             });
             
   }
+  GetPolicyNumbersForUserID(USER_ID) : Promise<any>  {
+      return $.cordys.ajax({
+        method: "GetPolicyNumbersForUserID",
+        namespace: "http://schemas.cordys.com/OrientMotorClaimDemoMetadata",
+        parameters: {
+        USER_ID:USER_ID
+    },
+        dataType: '* json'})
+        .done(function(response) {
+            console.log(response);           
+            });
+
+  }
 }

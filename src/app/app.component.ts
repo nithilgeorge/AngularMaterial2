@@ -12,11 +12,30 @@ export class Material2AppAppComponent {
   isDarkTheme: boolean = false;
   policy = new Policy();
   intimation = new Intimation();
+  UserPolicies = [];
+  selectedList:string="--Please select a policy number--" 
   constructor(private claimservice: ClaimService) { 
+    this.GetPolicyNumbersByUserID();
     }
-  getpolicyDetails(event)
+  GetPolicyNumbersByUserID(){
+    let UserID="Admin";
+    this.claimservice.GetPolicyNumbersForUserID(UserID).then(response=>{
+      var obj=response.tuple;
+            let result = response.tuple;
+         //  console.log(response);
+                for (let i = 0; i < result.length; i++) { 
+                  this.UserPolicies.push(result[i].old.Policy_Master.Policy_No);
+                  //console.log(this.UserPolicies);
+                  if(i == 0) {
+                    this.selectedList = this.UserPolicies[i];
+                    this.getpolicyDetails(this.selectedList);
+                  }
+                }
+    });
+  }
+  getpolicyDetails(value)
   {
-    let value = event.target.value;
+    
      this.claimservice.GetPolicyDetails(value).then( response=>{
             let field = response.tuple.old.Policy_Master;
             this.policy.PolicyNo=field.Policy_No;
